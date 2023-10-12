@@ -15,9 +15,7 @@ let caseNumber = ''
 
 const data = {
     '0': {
-      id_siniestro_principal: 7885377,
       fecha_presentacion_principal: 1692316800000,
-      numero_paciente_principal: '1007468343',
       puesto_trabajo: 'MUCAMA',
       fecha_accidente: 1692316800000,
       ingreso_tardio: null,
@@ -161,9 +159,6 @@ const data = {
       Max_protocolo: 120
     },
     '1': {
-      id_siniestro_principal: 7886223,
-      fecha_presentacion_principal: 1692316800000,
-      numero_paciente_principal: '1005149809',
       puesto_trabajo: 'carniceria',
       fecha_accidente: 1692316800000,
       ingreso_tardio: null,
@@ -307,9 +302,6 @@ const data = {
       Max_protocolo: 121
     },
     '2': {
-      id_siniestro_principal: 7894157,
-      fecha_presentacion_principal: 1693180800000,
-      numero_paciente_principal: '1003648319',
       puesto_trabajo: 'mercaderista',
       fecha_accidente: 1693180800000,
       ingreso_tardio: null,
@@ -453,9 +445,6 @@ const data = {
       Max_protocolo: 121
     },
     '3': {
-      id_siniestro_principal: 7895881,
-      fecha_presentacion_principal: 1693267200000,
-      numero_paciente_principal: '1003882284',
       puesto_trabajo: 'EDUCADORA DE PARVULO',
       fecha_accidente: null,
       ingreso_tardio: null,
@@ -599,9 +588,6 @@ const data = {
       Max_protocolo: 165
     },
     '4': {
-      id_siniestro_principal: 7897851,
-      fecha_presentacion_principal: 1693353600000,
-      numero_paciente_principal: '1000619964',
       puesto_trabajo: 'aseadora',
       fecha_accidente: 1693353600000,
       ingreso_tardio: null,
@@ -745,9 +731,6 @@ const data = {
       Max_protocolo: 120
     },
     '5': {
-      id_siniestro_principal: 7899764,
-      fecha_presentacion_principal: 1693440000000,
-      numero_paciente_principal: '1004318534',
       puesto_trabajo: 'docente',
       fecha_accidente: null,
       ingreso_tardio: null,
