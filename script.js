@@ -1,9 +1,8 @@
 
-// let var1 = document.getElementById('var1');
-// let var2 = document.getElementById('var2');
-// let var3 = document.getElementById('var3');
-// let var4 = document.getElementById('var4');
-// let var5 = document.getElementById('var5');
+// ------------------- DIAS DE TRATAMIENTO ------------------- 
+
+const diasTratContainer = document.getElementById('diasTratamiento')
+const robertContainer = document.getElementById('robertachs')
 
 let varInput1 = document.getElementById('varInput1');
 let varInput2 = document.getElementById('varInput2');
@@ -926,10 +925,54 @@ function selectCase(element) {
     textoClinico.value = data[id].examen_fisico
 }
 
-function alertNoCase() {
-    
+function modelSelect(element) {
+    if (element.id == 'dt') {
+        diasTratContainer.style.display = 'block'
+        robertContainer.style.display = 'none'
+    }
+    else if (element.id == 'rob') {
+        diasTratContainer.style.display = 'none'
+        robertContainer.style.display = 'block'
+    }
+}
+
+
+// ------------------- ROBERTACHS ------------------- 
+
+function calcularRobertFunction() {
+
+}
+
+var url = "https://adb-5655458034558005.5.azuredatabricks.net/serving-endpoints/A031_clf_calificacion_rga-CPU-v2/invocations";
+var datos = {
+    "dataframe_split": {
+      "columns": ["clinical_text"],
+      "data": [["Iba caminando por la calle camino al trabajo y me atropelló un camión. Tengo testigos del accidente."]]
+    }
 }
 
 
 
+var header = {
+    "Content-Type": "application/json",
+    "Authorization": `Bearer ${API_TOKEN}`
+}
 
+async function postJSON(datos) {
+    try {
+      const response = await fetch(url, {
+        method: "POST", // or 'PUT'
+        headers: header,
+        body: JSON.stringify(datos),
+      });
+  
+      const result = await response.json();
+      console.log("Success:", result);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+  
+
+postJSON(datos);
+  
