@@ -1,16 +1,16 @@
 
 // ------------------- DIAS DE TRATAMIENTO ------------------- 
 
-const diasTratContainer = document.getElementById('diasTratamiento')
-const robertContainer = document.getElementById('robertachs')
+// const diasTratContainer = document.getElementById('diasTratamiento')
+// const robertContainer = document.getElementById('robertachs')
 
-let varInput1 = document.getElementById('varInput1');
-let varInput2 = document.getElementById('varInput2');
-let varInput3 = document.getElementById('varInput3');
-let varInput4 = document.getElementById('varInput4');
-let varInput5 = document.getElementById('varInput5');
-let textoClinico = document.getElementById('textoClinico');
-let caseNumber = ''
+// let varInput1 = document.getElementById('varInput1');
+// let varInput2 = document.getElementById('varInput2');
+// let varInput3 = document.getElementById('varInput3');
+// let varInput4 = document.getElementById('varInput4');
+// let varInput5 = document.getElementById('varInput5');
+// let textoClinico = document.getElementById('textoClinico');
+// let caseNumber = ''
 
 const data = {
     '0': {
@@ -940,28 +940,43 @@ function modelSelect(element) {
 // ------------------- ROBERTACHS ------------------- 
 
 function calcularRobertFunction() {
-
-}
-
-var url = "https://adb-5655458034558005.5.azuredatabricks.net/serving-endpoints/A031_clf_calificacion_rga-CPU-v2/invocations";
-var datos = {
-    "dataframe_split": {
-      "columns": ["clinical_text"],
-      "data": [["Iba caminando por la calle camino al trabajo y me atropelló un camión. Tengo testigos del accidente."]]
+    let input = document.getElementById('textoRobert');
+    
+    var datos = {
+        "dataframe_split": {
+          "columns": ["clinical_text"],
+          "data": [[input.value]]
+        }
     }
+
+    // postJSON(datos)
+}
+
+function resetRobertClick() {
+    let resultadoCard = document.getElementById('resultadoRobertCard');
+    let input = document.getElementById('textoRobert');
+
+    input.value = ''
+    resultadoCard.style.display = 'none'
+
 }
 
 
 
-var header = {
-    "Content-Type": "application/json",
-    "Authorization": `Bearer ${API_TOKEN}`
-}
+
 
 async function postJSON(datos) {
+    var url = "https://adb-5655458034558005.5.azuredatabricks.net/serving-endpoints/A031_clf_calificacion_rga-CPU-v2/invocations";
+    var API_TOKEN = "dapi3462210b91e181bc2d392ab59ad417a8-3"
+    var header = {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${API_TOKEN}`
+    }
+
     try {
       const response = await fetch(url, {
         method: "POST", // or 'PUT'
+        credentials: "include",
         headers: header,
         body: JSON.stringify(datos),
       });
@@ -973,6 +988,12 @@ async function postJSON(datos) {
     }
   }
   
+var datos = {
+    "dataframe_split": {
+      "columns": ["clinical_text"],
+      "data": [["Iba caminando por la calle camino al trabajo y me atropelló un camión. Tengo testigos del accidente."]]
+    }
+}
 
 postJSON(datos);
   

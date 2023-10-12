@@ -152,7 +152,7 @@
     </div>
 
     <!-- --------- CONTENT ROBERTACHS--------- -->
-    <div class="container" id="robertachs" style="margin-top: 70px; display: none;" >
+    <div class="container" id="robertachs" style="margin-top: 70px; " > <!-- display: none; -->
         <br>
         <h3>RobertACHS</h3>
         <br>
@@ -161,15 +161,28 @@
           <div class="col-md-7" style="margin-left: 20px;">
               <!-- bloque_especifico_diag_1 -->
               <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label" style="margin-left: 4px; margin-bottom: 12px;">Ingrese el texto a analizar:</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                <label for="exampleFormControlTextarea1" class="form-label" style="margin-left: 4px; margin-bottom: 12px;">Ingrese el texto clínico del paciente:</label>
+                <textarea class="form-control" id="textoRobert" rows="7"></textarea>
               </div>
               <div>
                 <button type="button" class="btn btn-success" id="btnCalcular" style="margin-left: 4px; box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.3);" onclick="calcularRobertFunction()">Calcular</button>
     
               </div>
           </div>
+          
+          <div class="col-md-4" >
+            <div class="card text-center text-bg-light" id="resultadoRobertCard" style="margin-top: 45px; margin-left: 20px; box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);">
+                <h5 class="card-header">Resultado</h5>
+                <div class="card-body">
+                  <h5 class="card-title" style="margin-bottom: 18px;">La probabilidad de no ley es <span id="prediccion"> X </span> </h5>
+                  
+                  <a href="#" class="btn btn-success" style="width: 160px; margin-right: 12px; box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.3);"  onclick="resetRobertClick()">Reset</a>
+                  <!-- <a href="#" class="btn btn-success" style="width: 160px;" onclick="showVarClick()">Mostrar variables</a> -->
+                </div>
+            </div>
+          </div>
         </div>
+
 
     </div>
 
