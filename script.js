@@ -893,7 +893,6 @@ function calcularFunction() {
 }
 
 function resetClick() {
-    let tabla = document.getElementById('tablaVariables');
     let resultadoCard = document.getElementById('resultadoCard')
     let input = document.getElementsByClassName('form-control');
     const btnCase = document.getElementById('SelectCaseNumber')
@@ -904,7 +903,8 @@ function resetClick() {
     textoClinico.value = ''
     shapImg.src = ''
 
-    tabla.style.display = 'none'
+    console.log();(resultadoCard.style.display)
+
     resultadoCard.style.display = 'none'
     btnCase.innerHTML = 'Seleccionar caso'
 
@@ -921,8 +921,6 @@ function selectCase(element) {
 
     btnCase.innerText = 'Caso '+(id+1)+' '
 
-    console.log('id')
-
     caseNumber = id
     varInput1.value = data[id].bloque_especifico_diag_1
     varInput2.value = data[id].sexo
@@ -930,7 +928,7 @@ function selectCase(element) {
     varInput4.value = data[id].nivel_carga_laboral
     varInput5.value = data[id].dia_semana_principal
     textoClinico.value = data[id].examen_fisico
-    shapImg.src = `assets/caso${id}.jpg`
+    shapImg.src = `assets/caso${id}.png`
 }
 
 function modelSelect(element) {
