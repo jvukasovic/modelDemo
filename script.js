@@ -928,7 +928,7 @@ function selectCase(element) {
     varInput4.value = data[id].nivel_carga_laboral
     varInput5.value = data[id].dia_semana_principal
     textoClinico.value = data[id].examen_fisico
-    shapImg.src = `assets/caso${id}.png`
+    shapImg.src = `assets/demo_dt_ft_imp_${id}.jpg`
 }
 
 function modelSelect(element) {
