@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subgerencia Advanced Analytics</title>
+    <!-- Updated link to the CSS file using Flask's url_for method -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Updated link to the JavaScript file using Flask's url_for method -->
+    <script src="{{ url_for('static', filename='elements.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Modelo Calificación ROBERTACHS</h2>
+
+        <div class="input-area">
+            <label for="clinicalText">Ingrese el Texto Clínico del Paciente:</label>
+            <textarea id="clinicalText" rows="4" placeholder="Ingrese aquí el texto clínico..."></textarea>
+            <button onclick="fetchScores()">Calcular</button>
+        </div>
+
+        <div class="result-area">
+            <h4>Resultado</h4>
+            <p id="probability">Probabilidad No Ley:</p>
+        </div>
+        
+        <div class="explanation-area">
+            <h4>Explicación del Texto</h4>
+            <div id="textExplainer"></div>
+        </div>
+
+        <div class="error-area" style="display:none;" id="errorArea">
+            <h4>Error</h4>
+            <p id="errorMsg"></p>
+        </div>
+    </div>
+</body>
+</html>
