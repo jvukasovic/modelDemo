@@ -972,7 +972,7 @@ var datos = {
     }
 }
 
-async function postJSON(datos) {
+async function postJSON(datos, url) {
     
     var header = {
         "Content-Type": "application/json",
@@ -980,7 +980,7 @@ async function postJSON(datos) {
     }
 
     try {
-      const response = await fetch("https://adb-5655458034558005.5.azuredatabricks.net/serving-endpoints/A031_clf_calificacion_rga-CPU-v2/invocations", {
+      const response = await fetch(url, {
         method: "POST", 
         credentials: "include",
         headers: header,
@@ -990,7 +990,7 @@ async function postJSON(datos) {
       const result = await response; /* .json() */
       console.log("Success:", result);
     } catch (error) {
-      console.log("Error: ", error);
+      console.log("Error:", error);
     }
   }
   
