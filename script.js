@@ -963,10 +963,16 @@ function resetRobertClick() {
 
 
 
+var url = "https://adb-5655458034558005.5.azuredatabricks.net/serving-endpoints/A031_clf_calificacion_rga-CPU-v2/invocations";
+var API_TOKEN = "dapi3462210b91e181bc2d392ab59ad417a8-3"
+var datos = {
+    "dataframe_split": {
+        "columns": ["clinical_text"],
+        "data": [["Iba caminando por la calle camino al trabajo y me atropelló un camión. Tengo testigos del accidente."]]
+    }
+}
 
-
-async function postJSON(datos) {
-    var url = "https://adb-5655458034558005.5.azuredatabricks.net/serving-endpoints/A031_clf_calificacion_rga-CPU-v2/invocations";
+async function postJSON(datos, API_TOKEN, url) {
     
     var header = {
         "Content-Type": "application/json",
@@ -975,7 +981,7 @@ async function postJSON(datos) {
 
     try {
       const response = await fetch(url, {
-        method: "POST", // or 'PUT'
+        method: "POST", 
         credentials: "include",
         headers: header,
         body: JSON.stringify(datos),
@@ -988,12 +994,7 @@ async function postJSON(datos) {
     }
   }
   
-var datos = {
-    "dataframe_split": {
-      "columns": ["clinical_text"],
-      "data": [["Iba caminando por la calle camino al trabajo y me atropelló un camión. Tengo testigos del accidente."]]
-    }
-}
+
 
 postJSON(datos);
   
