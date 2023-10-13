@@ -972,7 +972,7 @@ var datos = {
     }
 }
 
-async function postJSON(datos, API_TOKEN, url) {
+async function postJSON(datos,API_TOKEN, url) {
     
     var header = {
         "Content-Type": "application/json",
