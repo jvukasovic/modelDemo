@@ -43,117 +43,85 @@
     <!-- --------- CONTENT DIAS TRAT---------- -->
     <div class="container" id="diasTratamiento" style="margin-top: 70px; " >
 
-        <br>
-        <h3>Modelo días de tratamiento</h3>
-        <br>
+      
+      <div class="row" >
+        <div class="col-md-7" >
+          <br>
+          <h3>Modelo días de tratamiento</h3>
+          <br>
+          <div class="btn-group">
+              <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="SelectCaseNumber" style="box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.3);">Seleccionar caso</button>
+              <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" id="0" onclick="selectCase(this)">Caso 1</a></li>
+              <li><a class="dropdown-item" href="#" id="1" onclick="selectCase(this)">Caso 2</a></li>
+              <li><a class="dropdown-item" href="#" id="2" onclick="selectCase(this)">Caso 3</a></li>
+              <li><a class="dropdown-item" href="#" id="3" onclick="selectCase(this)">Caso 4</a></li>
+              <li><a class="dropdown-item" href="#" id="4" onclick="selectCase(this)">Caso 5 </a></li>
+              <li><a class="dropdown-item" href="#" id="5" onclick="selectCase(this)">Caso 6</a></li>
+              </ul>
+          </div> 
+          <br>
+          <br>
+            <!-- bloque_especifico_diag_1 -->
+          <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="var1" style="width: 95px;">Diagnóstico</span>
+              <input type="text" class="form-control" id="varInput1">
+          </div>
+                
+          <!-- sexo -->
+          <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="var2" style="width: 95px;">Sexo</span>
+              <input type="text" class="form-control" id="varInput2">
+          </div>
 
-        <div class="btn-group">
-            <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="SelectCaseNumber" style="box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.3);">Seleccionar caso</button>
-            <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#" id="0" onclick="selectCase(this)">Caso 1</a></li>
-            <li><a class="dropdown-item" href="#" id="1" onclick="selectCase(this)">Caso 2</a></li>
-            <li><a class="dropdown-item" href="#" id="2" onclick="selectCase(this)">Caso 3</a></li>
-            <li><a class="dropdown-item" href="#" id="3" onclick="selectCase(this)">Caso 4</a></li>
-            <li><a class="dropdown-item" href="#" id="4" onclick="selectCase(this)">Caso 5 </a></li>
-            <li><a class="dropdown-item" href="#" id="5" onclick="selectCase(this)">Caso 6</a></li>
-            </ul>
-        </div> 
-        <br>
-        <br>
-        <!-- <br> -->
-        <div class="row">
-            <div class="col-md-7" >
-                <!-- bloque_especifico_diag_1 -->
-              <div class="input-group input-group-sm mb-3">
-                  <span class="input-group-text" id="var1" style="width: 95px;">Diagnóstico</span>
-                  <input type="text" class="form-control" id="varInput1">
-              </div>
-                    
-              <!-- sexo -->
-              <div class="input-group input-group-sm mb-3">
-                  <span class="input-group-text" id="var2" style="width: 95px;">Sexo</span>
-                  <input type="text" class="form-control" id="varInput2">
-              </div>
+          <!-- tipo_siniestro_origen_desc -->
+          <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="var3" style="width: 138px;">Tipo de siniestro</span>
+              <input type="text" class="form-control" id="varInput3">
+          </div>
 
-              <!-- tipo_siniestro_origen_desc -->
-              <div class="input-group input-group-sm mb-3">
-                  <span class="input-group-text" id="var3" style="width: 138px;">Tipo de siniestro</span>
-                  <input type="text" class="form-control" id="varInput3">
-              </div>
+          <!-- nivel_carga_laboral -->
+          <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="var4" style="width: 138px;">Nivel carga laboral</span>
+              <input type="text" class="form-control" id="varInput4">
+          </div>
 
-              <!-- nivel_carga_laboral -->
-              <div class="input-group input-group-sm mb-3">
-                  <span class="input-group-text" id="var4" style="width: 138px;">Nivel carga laboral</span>
-                  <input type="text" class="form-control" id="varInput4">
-              </div>
+          <!-- dia_semana_principal -->
+          <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="var5" style="width: 138px;">Día de la semana</span>
+              <input type="text" class="form-control" id="varInput5">
+          </div>
 
-              <!-- dia_semana_principal -->
-              <div class="input-group input-group-sm mb-3">
-                  <span class="input-group-text" id="var5" style="width: 138px;">Día de la semana</span>
-                  <input type="text" class="form-control" id="varInput5">
-              </div>
-
-              <!-- anamesis -->
-              <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label" style="font-size: 15px;">Texto clínico</label>
-                  <textarea class="form-control" id="textoClinico" rows="5" style="font-size: small;"></textarea>
-              </div>
-            </div>
-            
-            <div class="col-md-4" >
-                <div class="card text-center text-bg-light" id="resultadoCard" style="display: none; margin-left: 20px; box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);">
-                    <h5 class="card-header">Resultado</h5>
-                    <div class="card-body">
-                      <h5 class="card-title" style="margin-bottom: 18px;">La predicción del modelo son <span id="prediccion"> X </span> días de tratamiento</h5>
-                      
-                      <a href="#" class="btn btn-success" style="width: 160px; margin-right: 12px; box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.3);"  onclick="resetClick()">Reset</a>
-                      <!-- <a href="#" class="btn btn-success" style="width: 160px;" onclick="showVarClick()">Mostrar variables</a> -->
-                    </div>
-                  </div>
-            </div>
+          <!-- anamesis -->
+          <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label" style="font-size: 15px;">Texto clínico</label>
+              <textarea class="form-control" id="textoClinico" rows="5" style="font-size: small;"></textarea>
+          </div>
         </div>
-        <br>
-        <div>
-            <button type="button" class="btn btn-success" id="btnCalcular" style="box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.3);" onclick="calcularFunction()">Calcular</button>
-
-        </div>
-        <br>
-        <br>
-        <br>
- 
-        <!-- --------- TABLE ---------- -->
-        <div class="col-md-7" id="tablaVariables" style="display: none;">
-            <table class="table table-hover table-sm">
-                <thead>
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Nombre Variable</th>
-                    <th scope="col">Valor</th>
-                </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Variable 1</td>
-                    <td>valor1</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Variable 2</td>
-                    <td>valor2</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td >Variable 3</td>
-                    <td>valor3</td>
-                </tr>
-                </tbody>
-            </table>
-        </div> 
+        
+        <div class="col-md-4" id="resultadoCard" style="margin-top: 40px; text-align: center;" > <!-- display: none; --> 
+            <div class="card text-center text-bg-light"  style=" box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);">
+                <h5 class="card-header">Resultado</h5>
+                <div class="card-body">
+                  <h5 class="card-title" style="margin-bottom: 18px;">La predicción del modelo son <span id="prediccion"> X </span> días de tratamiento</h5>
+                  
+                  <a href="#" class="btn btn-success" style="width: 160px; margin-right: 12px; box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.3);"  onclick="resetClick()">Reset</a>
+                </div>
+            </div>
+            <div>
+              <img src="" alt="shapValues" id="shapImg" style="height: 300px; margin-top: 20px; outline: 2px solid; ">
+            </div>
+          </div>
+      </div>
+      <br>
+      <div>
+          <button type="button" class="btn btn-success" id="btnCalcular" style="box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.3);" onclick="calcularFunction()">Calcular</button>
+      </div>
+          
     </div>
 
     <!-- --------- CONTENT ROBERTACHS--------- -->
-    <div class="container" id="robertachs" style="margin-top: 70px; " > <!-- display: none; -->
+    <div class="container" id="robertachs" style="margin-top: 70px; display: none;" > 
         <br>
         <h3>RobertACHS</h3>
         <br>

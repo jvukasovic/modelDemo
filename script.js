@@ -1,16 +1,17 @@
 
 // ------------------- DIAS DE TRATAMIENTO ------------------- 
 
-// const diasTratContainer = document.getElementById('diasTratamiento')
-// const robertContainer = document.getElementById('robertachs')
+const diasTratContainer = document.getElementById('diasTratamiento')
+const robertContainer = document.getElementById('robertachs')
 
-// let varInput1 = document.getElementById('varInput1');
-// let varInput2 = document.getElementById('varInput2');
-// let varInput3 = document.getElementById('varInput3');
-// let varInput4 = document.getElementById('varInput4');
-// let varInput5 = document.getElementById('varInput5');
-// let textoClinico = document.getElementById('textoClinico');
-// let caseNumber = ''
+let varInput1 = document.getElementById('varInput1');
+let varInput2 = document.getElementById('varInput2');
+let varInput3 = document.getElementById('varInput3');
+let varInput4 = document.getElementById('varInput4');
+let varInput5 = document.getElementById('varInput5');
+let textoClinico = document.getElementById('textoClinico');
+let shapImg = document.getElementById('shapImg');
+let caseNumber = ''
 
 const data = {
     '0': {
@@ -874,6 +875,9 @@ const data = {
     }
   }
 
+
+//   ./assets/octobiwan.jpg
+
 function calcularFunction() {
     let resultadoCard = document.getElementById('resultadoCard')
     let prediccion = document.getElementById('prediccion')
@@ -898,6 +902,7 @@ function resetClick() {
         input[i].value = '';
     }
     textoClinico.value = ''
+    shapImg.src = ''
 
     tabla.style.display = 'none'
     resultadoCard.style.display = 'none'
@@ -916,6 +921,8 @@ function selectCase(element) {
 
     btnCase.innerText = 'Caso '+(id+1)+' '
 
+    console.log('id')
+
     caseNumber = id
     varInput1.value = data[id].bloque_especifico_diag_1
     varInput2.value = data[id].sexo
@@ -923,6 +930,7 @@ function selectCase(element) {
     varInput4.value = data[id].nivel_carga_laboral
     varInput5.value = data[id].dia_semana_principal
     textoClinico.value = data[id].examen_fisico
+    shapImg.src = `assets/caso${id}.jpg`
 }
 
 function modelSelect(element) {
@@ -996,5 +1004,5 @@ async function postJSON(datos, url) {
   
 
 
-postJSON(datos);
+// postJSON(datos);
   
