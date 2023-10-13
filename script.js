@@ -970,7 +970,7 @@ function resetRobertClick() {
 
 
 var url = "https://adb-5655458034558005.5.azuredatabricks.net/serving-endpoints/A031_clf_calificacion_rga-CPU-v2/invocations";
-// var API_TOKEN = "dapi3462210b91e181bc2d392ab59ad417a8-3"
+//
 var datos = {
     "dataframe_split": {
         "columns": ["clinical_text"],
@@ -982,7 +982,7 @@ async function postJSON(datos, url) {
     
     var header = {
         "Content-Type": "application/json",
-        "Authorization": 'Bearer dapi3462210b91e181bc2d392ab59ad417a8-3'
+        "Authorization": 'Bearer '
     }
 
     try {
