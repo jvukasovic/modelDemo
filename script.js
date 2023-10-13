@@ -987,7 +987,7 @@ async function postJSON(datos, url) {
         body: JSON.stringify(datos),
       });
   
-      const result = await response.json();
+      const result = await response; /* .json() */
       console.log("Success:", result);
     } catch (error) {
       console.log("Error:", error);
