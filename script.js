@@ -928,7 +928,7 @@ function selectCase(element) {
     varInput4.value = data[id].nivel_carga_laboral
     varInput5.value = data[id].dia_semana_principal
     textoClinico.value = data[id].examen_fisico
-    shapImg.src = 'assets/test2.jpeg'/* `assets/demo_dt_ft_imp_${id}.jpg` */
+    shapImg.src = `assets/demo_dt_ft_imp_${id+1}.jpg`
 }
 
 function modelSelect(element) {
@@ -970,7 +970,7 @@ function resetRobertClick() {
 
 
 var url = "https://adb-5655458034558005.5.azuredatabricks.net/serving-endpoints/A031_clf_calificacion_rga-CPU-v2/invocations";
-//
+
 var datos = {
     "dataframe_split": {
         "columns": ["clinical_text"],
@@ -982,7 +982,7 @@ async function postJSON(datos, url) {
     
     var header = {
         "Content-Type": "application/json",
-        "Authorization": 'Bearer '
+        "Authorization": 'Bearer APIKEY'
     }
 
     try {
@@ -993,7 +993,7 @@ async function postJSON(datos, url) {
         body: JSON.stringify(datos),
       });
   
-      const result = await response; /* .json() */
+      const result = response; /* .json() */
       console.log("Success:", result);
     } catch (error) {
       console.log("Error:", error);
