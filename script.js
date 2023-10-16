@@ -8,7 +8,7 @@ let varInput1 = document.getElementById('varInput1');
 let varInput2 = document.getElementById('varInput2');
 let varInput3 = document.getElementById('varInput3');
 let varInput4 = document.getElementById('varInput4');
-let varInput5 = document.getElementById('varInput5');
+// let varInput5 = document.getElementById('varInput5');
 let textoClinico = document.getElementById('textoClinico');
 let shapImg = document.getElementById('shapImg');
 let caseNumber = ''
@@ -299,7 +299,7 @@ const data = {
       dif_dias_a_diag_1: 0,
       fecha_carga: '2023-10-09',
       hora_carga: '15:40',
-      Max_protocolo: 121
+      Max_protocolo: 140
     },
     '2': {
       puesto_trabajo: 'mercaderista',
@@ -585,7 +585,7 @@ const data = {
       dif_dias_a_diag_1: 0,
       fecha_carga: '2023-10-09',
       hora_carga: '15:40',
-      Max_protocolo: 165
+      Max_protocolo: 65
     },
     '4': {
       puesto_trabajo: 'aseadora',
@@ -926,7 +926,7 @@ function selectCase(element) {
     varInput2.value = data[id].sexo
     varInput3.value = data[id].tipo_siniestro_origen_desc
     varInput4.value = data[id].nivel_carga_laboral
-    varInput5.value = data[id].dia_semana_principal
+    // varInput5.value = data[id].dia_semana_principal
     textoClinico.value = data[id].examen_fisico
     shapImg.src = `assets/demo_dt_ft_imp_${id+1}.jpg`
 }
